@@ -31,14 +31,15 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text('My ticketApp', style: TextStyle(color: Colors.white)),
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.blue,
+      //   title: Text('My ticketApp', style: TextStyle(color: Colors.white)),
+      // ),
       body: Center(
         child: _widgetOptions[_variableSelectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
+
         currentIndex: _variableSelectedIndex,
         onTap: _onItemTapped,
         elevation: 10,

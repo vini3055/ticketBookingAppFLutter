@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticketapp/screens/bottom_bar.dart';
+import 'package:ticketapp/utils/app_styles.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,16 +16,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primaryColor: primary,
         useMaterial3: true,
       ),
-      home: BottomBar(),
+      home: const BottomBar(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
   final String title;
 
   @override

@@ -2,6 +2,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticketapp/screens/hotel_screen.dart';
 import 'package:ticketapp/screens/ticket_view.dart';
 import 'package:ticketapp/utils/app_styles.dart';
 
@@ -94,6 +95,44 @@ class HomeScreen extends StatelessWidget {
               children: [
                 TicketView(),
                 TicketView()
+              ],
+            ),
+          ),
+          const Gap(15),
+          Container(
+            // padding: EdgeInsets.only(left:20,right: 20),
+            // incase if both left and right having same padding we can use symmetric padding on horizontal
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child:  Row(
+              // can use spacer but mainaxisalignment can also be used
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               children: [
+                 Text('Hotels',style: Styles.headLineStyle2,),
+                 // const Spacer(),-v
+                 // instead of spacer mainaxisalignment:mainaxisalignment.spacebetween get used
+                 InkWell(
+                   onTap: (){
+                     print('Data');
+                   },
+                     child: Text(
+                       'View all',
+                       style: Styles.textStyle.copyWith(color: Styles.textColor)
+                     ),
+                 ),
+               ],
+            ),
+          ),
+          const Gap(15),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(left: 20),
+            child: Row(
+              children: [
+                HotelScreen(imageName: "assets/images/image1.jpg"),
+                const Gap(15),
+                HotelScreen(imageName: "assets/images/image1.jpg"),
+                HotelScreen(imageName: "assets/images/image1.jpg"),
+                // HotelScreen(imageName: "assets/images/image1.jpg"),
               ],
             ),
           )

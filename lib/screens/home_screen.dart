@@ -128,10 +128,9 @@ class HomeScreen extends StatelessWidget {
             padding: EdgeInsets.only(left: 20),
             child: Row(
               children: [
-                HotelScreen(imageName: "assets/images/image1.jpg"),
-                const Gap(15),
-                HotelScreen(imageName: "assets/images/image1.jpg"),
-                HotelScreen(imageName: "assets/images/image1.jpg"),
+                HotelScreen(),
+                HotelScreen(),
+                HotelScreen(),
                 // HotelScreen(imageName: "assets/images/image1.jpg"),
               ],
             ),

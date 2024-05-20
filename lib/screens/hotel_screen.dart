@@ -5,10 +5,13 @@ import 'package:ticketapp/utils/app_layout.dart';
 import 'package:ticketapp/utils/app_styles.dart';
 
 class HotelScreen extends StatelessWidget {
-  HotelScreen({super.key});
+  final Map<String, dynamic> hotels;
+  HotelScreen({super.key, required this.hotels});
 
   @override
   Widget build(BuildContext context) {
+    // print to check if the values are getting or not
+    // print('hotels listhotels${hotels['image']}');
     final size = AppLayout.getSize(context);
 
     return Container(
@@ -44,7 +47,6 @@ class HotelScreen extends StatelessWidget {
 //       ),
 
       // original version of card
-
       width: size.width * 0.6,
       height: 350,
       padding: EdgeInsets.symmetric(horizontal: 15, vertical: 17),
@@ -70,16 +72,16 @@ class HotelScreen extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 color: Styles.primaryColor,
-                image: const DecorationImage(
+                image:  DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/images/image1.jpg'))),
+                    image: AssetImage('assets/images/${hotels['image']}'))),
           ),
           const Gap(10),
-          Text('Open Space', style: Styles.headLineStyle2.copyWith(color: Styles.kakiColor),),
+          Text('${hotels['place']}', style: Styles.headLineStyle2.copyWith(color: Styles.kakiColor),),
           const Gap(5),
-          Text('London', style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+          Text('${hotels['destination']}', style: Styles.headLineStyle3.copyWith(color: Colors.white),),
           const Gap(8),
-          Text('\$25/night',style: Styles.headLineStyle1.copyWith(color: Styles.kakiColor),),
+          Text('\$${hotels['price']}/night',style: Styles.headLineStyle1.copyWith(color: Styles.kakiColor),),
         ],
       ),
     );

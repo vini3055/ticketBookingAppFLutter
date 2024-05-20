@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticketapp/screens/hotel_screen.dart';
 import 'package:ticketapp/screens/ticket_view.dart';
+import 'package:ticketapp/utils/app_info_list.dart';
 import 'package:ticketapp/utils/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -61,6 +62,7 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       const Icon(FluentSystemIcons.ic_fluent_search_filled,
                           color: Color(0xFFBFC205)),
+                      const Gap(12),
                       Text('Search')
                     ],
                   ),
@@ -92,10 +94,7 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                TicketView(),
-                TicketView()
-              ],
+              children: ticketList.map((e) => TicketView(ticketList: e)).toList()
             ),
           ),
           const Gap(15),
@@ -127,12 +126,7 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                HotelScreen(),
-                HotelScreen(),
-                HotelScreen(),
-                // HotelScreen(imageName: "assets/images/image1.jpg"),
-              ],
+              children: hotelList.map((hotels) => HotelScreen(hotels: hotels)).toList()
             ),
           )
         ],

@@ -65,6 +65,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   fluentui_icons: ^1.0.0
   gap:
+  get:
 
 
 dev_dependencies:
